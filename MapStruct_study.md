@@ -34,7 +34,7 @@ Java代码编译和执行的整个过程包含了以下三个重要的机制：
 - 2）注解处理；
 - 3）语义分析和生成class文件
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151637019.png?token=AD7IYNYPI6RMXCL2U3SSNGDC7IDCK)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152003997.png?token=AD7IYN3NXD5BOGAS4WR5X33C7I3HE)
 
 其中的annotation processing就是代码的注解处理
 
@@ -88,7 +88,7 @@ Java代码编译和执行的整个过程包含了以下三个重要的机制：
 
 ### 代码结构
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151615530.png?token=AD7IYNYFWICVL7WME4RZPW3C7IAPW)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152005016.png?token=AD7IYN7CGAJIF6DPWVP2CZLC7I3MC)
 
 #### 框架代码的组成部分，主要分为两个包: 
 - org.mapstruct:mapstruct：包含了必要的注解，例如@Mapping; 
@@ -97,22 +97,23 @@ Java代码编译和执行的整个过程包含了以下三个重要的机制：
 在使用过程中需要只需要配置完成后运行 mvn compile就会发现 target文件夹中生成了一个mapper接口的实现类。打开实现类会发现实体类中自动生成了字段一一对应的get、set方法的文件。
 这就是**为什么mapstruct的效率比较高的原因**，相比于反射获取对象进行拷贝的方法，这种更贴近于原生get、set方法的框架显得更为高效。
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151621085.png?token=AD7IYN7MTI6UKD4ST7YGHF3C7IBEM)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152007439.png?token=AD7IYNZE5N5RMGOLDXVLTN3C7I3UK)
 
 ### MapStruct对JSR 269 API的实现
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151722911.png?token=AD7IYN4NSFJLGD6Y2GGWL33C7IIKY)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152009242.png?token=AD7IYN6W5VBGYMZZXV6A2PTC7I33O)
 
 MappingProcessor在process方法中，通过SPI机制加载MapStruct自定义的ModelElementProcessor实现的责任链，每一个我们在代码中定义的@Mapping接口，经过链路上的ModelElementProcessor处理后，生成目标java文件；
 
-- MappingProcessor继承抽象类AbstractProcessor，通过重写process()实现mapstruct的逻辑
+- MappingProcessor继承抽象类AbstractProcessor，重写process()实现mapstruct的逻辑
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151704612.png?token=AD7IYN2HCW4U44QCDV4SQODC7IGEA)
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151706030.png?token=AD7IYNYP4ZJ6TZVDEBJIRBDC7IGNW)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152011224.png?token=AD7IYNYUFJG3VA746NTOIM3C7I4CI)
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151709578.png?token=AD7IYNYLZXWXQXNPHN5Z22DC7IG2G)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152014997.png?token=AD7IYN6LIYTOCEGN5ZNBBRTC7I4MS)
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151716652.png?token=AD7IYN6EO6W2HPPZHBWFBBLC7IHSQ)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152018860.png?token=AD7IYN23I7ESDFOW5H3X3KLC7I45M)
 
-![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208151726580.png?token=AD7IYN6XKWDWWFXWPO6FVZDC7IIXM)
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152021836.png?token=AD7IYN3PSH3QL47R4IVTPBLC7I5HU)
+
+![](https://raw.githubusercontent.com/Muscleape/MyMarkdownBlog/main/images/202208152024308.png?token=AD7IYNZMMAY3AYRRKQA57XLC7I5T4)
