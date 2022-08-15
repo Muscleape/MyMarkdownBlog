@@ -23,6 +23,7 @@
 hs_err_pid*
 
 /images/
+images/
 
 # system ignore
 .DS_Store
